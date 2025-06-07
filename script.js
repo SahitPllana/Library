@@ -41,7 +41,6 @@ const tbody = document.querySelector('#tbody')
 const select = document.getElementById('bookSelect');
 const searchBtn = document.getElementById('searchBookBtn');
 
-// mbushim select-in me emrat e librave
 data.forEach((book, index) => {
     const option = document.createElement('option');
     option.value = index;
@@ -49,20 +48,16 @@ data.forEach((book, index) => {
     select.appendChild(option);
 });
 
-// me bo fillimisht tabelën boshb
 tbody.innerHTML = '';
 
-// kur e shtypim butonin search
 searchBookBtn.addEventListener('click', () => {
     const index = select.value;
     if (index === "") return;
 
     const book = data[index];
 
-    // Pastro tabelën
     tbody.innerHTML = "";
 
-    // Shto veç librin e zgjedhur
     const row = document.createElement('tr');
     row.innerHTML = 
         `
